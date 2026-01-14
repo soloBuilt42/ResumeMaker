@@ -1,0 +1,352 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.controls {
+    padding: 20px;
+}
+
+#preview {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.template-pill {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.template-pill.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-theme #preview {
+    background-color: #444;
+}
+
+.dark-theme .template-pill {
+    border-color: #555;
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-theme .template-pill.active {
+    background-color: #007bff;
+}
+:root {
+    --studio-gradient: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+    --bg-light: #f8fafc;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Header Styling */
+.studio-header {
+    background: var(--studio-gradient);
+    border-radius: 0 0 2rem 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    min-width: 120px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-card small {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.action-panel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    width: 320px;
+}
+
+/* Blueprint Navigation */
+#sectionNav button {
+    text-align: left;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+#sectionNav button.active-section {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* Form Styling */
+.form-section-tittle {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    padding: 0.6rem;
+}
+
+.repeater-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0 !important;
+    position: relative;
+    padding: 1.5rem !important;
+}
+
+/* Live Preview Surface */
+.preview-surface {
+    background: white;
+    min-height: 800px;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+
+.preview-surface.grid {
+  background-color: #f0f0f0;
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.preview-surface.slate {
+  background-color: #1e293b; /* Dark slate background */
+  padding: 40px;
+}
+
+/* Ensure the paper stays white even when the background changes */
+.resume-paper {
+  background: white;
+  min-height: 297mm; /* A4 Ratio */
+  width: 210mm;
+  margin: 0 auto;
+  padding: 20mm;
+}
+
+/* Section Status */
+#sectionNav button.complete::after {
+    content: "✓";
+    float: right;
+    color: #10b981;
+}
+
+/* Resume Preview Styles (Matched to JS Export Styles) */
+.resume-paper {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    color: #222;
+}
+
+.resume-paper h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.resume-paper h2 {
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4f46e5;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.resume-paper .resume-header {
+    border-bottom: 4px solid #4f46e5;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resume-paper .name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.resume-paper .role {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.resume-paper .contact-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.resume-paper .contact-info span {
+    margin-right: 12px;
+}
+
+.resume-paper .summary {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.resume-paper .resume-section h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+}
+
+.resume-paper .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.resume-paper .skill-chip {
+    background: rgba(79, 70, 229, 0.12);
+    color: #4f46e5;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.resume-paper .experience-item {
+    margin-bottom: 1.5rem;
+}
+
+.resume-paper .experience-item h3 {
+    font-size: 1.05rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.resume-paper .experience-item .meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.resume-paper .experience-item ul {
+    padding-left: 20px;
+    margin-top: 6px;
+}
+
+.resume-paper .experience-item li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.resume-paper .education-item {
+    margin-bottom: 1.5rem;
+}
+
+.resume-paper .education-item h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.resume-paper .education-item .meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Design --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 992px) {
+    .studio-header {
+        padding: 2rem !important;
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+
+    .studio-header .row > * {
+        text-align: center;
+    }
+
+    .studio-header .d-flex.justify-content-end {
+        justify-content: center !important;
+        margin-top: 2rem;
+    }
+
+    .action-panel {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .col-lg-8 .sticky-top {
+        position: static !important;
+    }
+
+    .preview-surface {
+        margin-top: 2rem;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .studio-header h1 {
+        font-size: 2rem;
+    }
+
+    .studio-header .lead {
+        font-size: 1rem;
+    }
+
+    .stat-card {
+        min-width: 90px;
+        padding: 0.75rem;
+    }
+
+    .preview-surface {
+        padding: 1.5rem;
+    }
+
+    .resume-paper {
+        /* Override print-centric fixed width for mobile viewing */
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .contact-info span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .studio-header .d-flex.gap-3 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .blueprint-card {
+        padding: 1.5rem !important;
+    }
+}
