@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFGResume Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-mode="light">
+
+    <header class="studio-header p-5 text-white">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-5 fw-bold">Naveen Resume Studio</h1>
+                    <p class="lead opacity-75">Compose job-ready resumes with schema-driven forms, modular templates,
+                        and live preview export.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="stat-card">
+                            <small>TEMPLATES</small>
+                            <div id="templateCount" class="h4 m-0">2</div>
+                        </div>
+                        <div class="stat-card">
+                            <small>SECTIONS</small>
+                            <div id="sectionCount" class="h4 m-0">5</div>
+                        </div>
+                        <div class="stat-card">
+                            <small>FIELDS FILLED</small>
+                            <div id="fieldProgress" class="h4 m-0">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                    <div class="action-panel p-4 rounded-4">
+                        <small class="text-uppercase opacity-50 d-block mb-2">Preset Actions</small>
+                        <div class="d-flex gap-2 mb-4">
+                            <button id="resetBtn" class="btn btn-outline-light btn-sm">Reset form</button>
+                            <button id="themeToggle" class="btn btn-light btn-sm">Dark mode</button>
+                        </div>
+                        <small class="text-uppercase opacity-50 d-block mb-2">Template surface</small>
+                        <div id="templatePills" class="d-flex gap-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid py-4">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="blueprint-card shadow-sm p-4 bg-white rounded-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <small class="text-muted text-uppercase">Blueprint</small>
+                            <h2 class="h4 m-0">Resume Schema</h2>
+                        </div>
+                        <button id="downloadBtn" class="btn btn-primary shadow-sm">Download PDF</button>
+                    </div>
+
+                    <nav id="sectionNav" class="vstack gap-2 mb-4">
+                    </nav>
+
+                    <div class="mb-4">
+                        <label class="form-label small text-muted">Template (fallback select)</label>
+                        <select id="templateSelect" class="form-select"></select>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <form id="form" class="vstack gap-4">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="sticky-top" style="top: 20px;">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <small class="text-muted text-uppercase">Live Preview</small>
+                            <div id="liveMeta" class="small fw-bold text-dark">0/5 sections ready · 0 fields filled
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm" id="previewBgButtons">
+                            <button class="btn btn-outline-primary active" data-preview-bg="plain">Plain</button>
+                            <button class="btn btn-outline-primary" data-preview-bg="grid">Grid</button>
+                            <button class="btn btn-outline-primary" data-preview-bg="slate">Slate</button>
+                        </div>
+                    </div>
+
+                    <div id="previewPane" class="preview-surface shadow rounded-4">
+                        <div id="preview" class="resume-paper">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="printArea" style="position: absolute; left: -9999px;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
